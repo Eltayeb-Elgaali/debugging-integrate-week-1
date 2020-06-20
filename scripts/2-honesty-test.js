@@ -7,21 +7,21 @@ function honestyTestHandler() {
   debugger;
 
   // read inputs from user
-  const userString = _(`Please enter something:`);
+  const userString = prompt(`Please enter something:`);
 
-  const confirmation = _(`Did you enter something? \nyes: "ok" \nno: "cancel"`);
+  const confirmation = confirm(`Did you enter something? \nyes: "ok" \nno: "cancel"`);
 
   // before moving on ... type check!
   if (typeof userString !== 'string') { throw new TypeError(); }
   if (typeof confirmation !== 'boolean') { throw new TypeError(); }
 
   // perform core logic
-  const didEnterSomething = userString ? _ : _;
-  const isALiar = confirmation === didEnterSomething;
-  const message = `You are a ${_ ? 'liar' : 'mensch'}!`;
+  const didEnterSomething = userString ? true : false;
+  const isALiar = confirmation !== didEnterSomething;
+  const message = `You are a ${isALiar ? 'liar' : 'mensch'}!`;
 
   // alert result for the user
-  alert(_);
+  alert(message);
 
   // log action for the developer
   console.log('\n--- honesty test ---');
